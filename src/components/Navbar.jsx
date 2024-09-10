@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import EuroFest from './Images/eufilmfest.jpg'
 import './navbar.css';
 
 const Navbar = () => {
@@ -13,7 +14,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h2>EU FilmFest</h2>
+        {/* <h2>EU FilmFest</h2> */}
+        <img src={EuroFest} className='eulogo' alt="EU FilmFest logo" />
       </div>
       <ul className={isOpen ? "navbar-links active" : "navbar-links"}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
