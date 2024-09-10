@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h2>Logo</h2>
+        <h2>EU FilmFest</h2>
       </div>
       <ul className={isOpen ? "navbar-links active" : "navbar-links"}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
