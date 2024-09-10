@@ -1,0 +1,154 @@
+/* Form Styles */
+.registration-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #0056b3;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .submit-btn, .download-btn, .read-more-btn {
+    width: 94%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .download-btn{
+    background-color: #217346;
+  }
+
+
+  
+  .submit-btn:hover, .download-btn:hover, .read-more-btn:hover {
+    background-color: #1e79da;
+  }
+
+  .download-btn:hover{
+    background-color: #3d825c;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .registration-form{
+    ul li {
+      background-color: #e9ecef;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+  }
+ 
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Close Icon Styles */
+  .close-modal-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: red; /* Close button is now red */
+    transition: color 0.3s ease;
+  }
+  
+  .close-modal-icon:hover {
+    color: darkred; /* Darker red on hover */
+  }
+  
+  /* Modal Body (Scrollable Content) */
+  .modal-body {
+    max-height: 300px; /* Limit the height */
+    overflow-y: auto;  /* Enable scrolling */
+    padding-right: 10px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* For Firefox */
+  }
+  
+  /* Webkit Scrollbar for Material UI Fade Effect */
+  .modal-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-body:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .registration-form {
+      margin: 20px auto;
+    }
+  
+    .modal-content {
+      width: 90%;
+    }
+  }
+  
