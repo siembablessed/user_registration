@@ -12,7 +12,10 @@
   .navbar-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    
+    h2{
+      color: white;
+    }
   }
   
   .navbar-links {
