@@ -165,7 +165,9 @@ body{
   
   @media (max-width: 768px) {
     .registration-form {
+      width: 350px;
       margin: 20px auto;
+      margin-bottom: 0;
     }
   
     .modal-content {
