@@ -6,7 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Home = () => {
+const Admin = () => {
   const [visitors, setVisitors] = useState(() => {
     const savedVisitors = localStorage.getItem('visitors');
     return savedVisitors ? JSON.parse(savedVisitors) : [];
@@ -179,4 +179,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Admin;

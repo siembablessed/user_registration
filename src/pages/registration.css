@@ -40,6 +40,7 @@ body{
     margin-left: 10px;
     transform: translateY(-7px);
     color: #000000;
+    z-index: 1;
   }
   
   .form-group input {
@@ -207,4 +208,48 @@ body{
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+.custom-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.country-input-container {
+  position: relative;
+  margin-bottom: 16px; /* Adjust margin to match other inputs */
+}
+
+.country-input {
+  width: 94%; /* Ensure it matches other input boxes */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.country-option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.country-option:hover {
+  background-color: #f0f0f0;
 }
