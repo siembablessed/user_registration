@@ -5,8 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './registration.css';
 import './Fonts/font.css';
+import FooterImage from './Images/BottomFrame.png'
+import TopImage from './Images/TopFrame.png'
 
-// List of countries (abbreviated for brevity)
+// My List of countries 
 const countries = [
   "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
   "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
@@ -148,6 +150,8 @@ const Registration = () => {
   }, [isModalOpen]);
 
   return (
+    <div>
+      <img src={TopImage} alt="" className='topImage' />
     <div className="registration-form">
       <h1>Visitor Registration Form</h1>
       <form onSubmit={handleSubmit}>
@@ -254,6 +258,8 @@ const Registration = () => {
           </div>
         </div>
       )}
+    </div>
+    <img src={FooterImage} alt=""  className='footerImage'/>
     </div>
   );
 };

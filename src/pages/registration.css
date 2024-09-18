@@ -19,7 +19,6 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-
   }
   
   h1, h2 {
@@ -252,4 +251,14 @@ body{
 
 .country-option:hover {
   background-color: #f0f0f0;
+}
+
+.footerImage{
+  margin: 0; padding: 0;
+  width: 100%;
+}
+
+.topImage{
+  margin: 0; padding: 0;
+  width: 100%;
 }
