@@ -8,10 +8,10 @@ import About from './pages/About';
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/registration" element={<Registration />} />
+        <Route path="/" element={<Registration />} />
+        <Route path="/registration" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

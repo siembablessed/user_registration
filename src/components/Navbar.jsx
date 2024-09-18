@@ -18,8 +18,8 @@ const Navbar = () => {
         <img src={EuroFest} className='eulogo' alt="EU FilmFest logo" />
       </div>
       <ul className={isOpen ? "navbar-links active" : "navbar-links"}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/registration" onClick={toggleMenu}>Registration</Link></li>
+        <li><Link to="/" onClick={toggleMenu}>Registration</Link></li>
+        <li><Link to="/registration" onClick={toggleMenu}>Admin</Link></li>
         <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
       </ul>
       <div className="hamburger" onClick={toggleMenu}>

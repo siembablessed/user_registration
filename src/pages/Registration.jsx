@@ -84,10 +84,10 @@ const Registration = () => {
 
   return (
     <div className="registration-form">
-      <h1>Visitor Registration</h1>
+      <h1>Visitor Registration Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Full Name</label>
+          <label>Your Full Name</label>
           <input
             type="text"
             name="fullName"
@@ -97,7 +97,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>ID Number</label>
+          <label>Your ID Number</label>
           <input
             type="text"
             name="idNumber"
@@ -107,7 +107,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>Address</label>
+          <label>Your Home Country</label>
           <input
             type="text"
             name="address"
@@ -117,7 +117,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>Age</label>
+          <label>Your Age</label>
           <input
             type="number"
             name="age"
@@ -127,7 +127,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>Reason for Visit</label>
+          <label>Event</label>
           <input
             type="text"
             name="reason"
@@ -138,7 +138,7 @@ const Registration = () => {
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
-      <h2>Visitor List</h2>
+      {/* <h2>Visitor List</h2>
       <ul>
         {visitors.slice(0, 2).map((visitor, index) => (
           <li key={index}>
@@ -173,7 +173,7 @@ const Registration = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
