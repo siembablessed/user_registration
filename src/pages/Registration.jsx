@@ -176,6 +176,10 @@ const Registration = () => {
           </div>
         </div>
       )} */}
+
+    <button onClick={downloadExcel} className="download-btn">
+        Download Excel
+      </button>
     </div>
   );
 };
