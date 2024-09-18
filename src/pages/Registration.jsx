@@ -4,8 +4,7 @@ import * as XLSX from 'xlsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './registration.css';
-import'./Fonts/font.css';
-
+import './Fonts/font.css';
 
 const Registration = () => {
   const [visitors, setVisitors] = useState(() => {
@@ -19,11 +18,12 @@ const Registration = () => {
     address: '',
     age: '',
     reason: 'Film Festival',
+    date: new Date().toISOString(), // Automatically set the date
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const modalRef = useRef(); // For detecting clicks outside the modal
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const modalRef = useRef();
 
   useEffect(() => {
     localStorage.setItem('visitors', JSON.stringify(visitors));
@@ -37,6 +37,11 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setVisitors([...visitors, formData]);
+
+    setShowSuccessPopup(true);
+    setTimeout(() => {
+      setShowSuccessPopup(false);
+    }, 3000);
 
     axios.post('YOUR_GOOGLE_SHEET_API_URL', formData)
       .then(() => {
@@ -52,6 +57,7 @@ const Registration = () => {
       address: '',
       age: '',
       reason: 'Film Festival',
+      date: new Date().toISOString(), // Reset the date when form is cleared
     });
   };
 
@@ -68,7 +74,7 @@ const Registration = () => {
 
   const closeModalOutsideClick = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
-      setIsModalOpen(false); // Close modal if clicked outside
+      setIsModalOpen(false);
     }
   };
 
@@ -128,37 +134,36 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Event</label>
-          <input
-            type="text"
-            name="reason"
-            value={formData.reason}
-            disabled
-          />
-        </div>
+
+        {/* Hidden Event Field */}
+        <input
+          type="hidden"
+          name="reason"
+          value={formData.reason}
+        />
+
+        {/* Hidden Date Field */}
+        <input
+          type="hidden"
+          name="date"
+          value={formData.date}
+        />
+
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
-      {/* <h2>Visitor List</h2>
-      <ul>
-        {visitors.slice(0, 2).map((visitor, index) => (
-          <li key={index}>
-            {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
-          </li>
-        ))}
-      </ul>
-
-      {visitors.length > 2 && (
-        <button onClick={toggleModal} className="read-more-btn">
-          Read More
-        </button>
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="success-popup">
+          <p>Data saved successfully!</p>
+        </div>
       )}
 
       <button onClick={downloadExcel} className="download-btn">
         Download Excel
       </button>
 
+      {/* Modal for displaying all visitors */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content" ref={modalRef}>
@@ -168,18 +173,14 @@ const Registration = () => {
               <ul>
                 {visitors.map((visitor, index) => (
                   <li key={index}>
-                    {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
+                    {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason} - {visitor.date}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-      )} */}
-
-    <button onClick={downloadExcel} className="download-btn">
-        Download Excel
-      </button>
+      )}
     </div>
   );
 };
