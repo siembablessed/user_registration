@@ -4,6 +4,8 @@ import * as XLSX from 'xlsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './registration.css';
+import'./Fonts/font.css';
+
 
 const Registration = () => {
   const [visitors, setVisitors] = useState(() => {

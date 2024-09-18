@@ -3,6 +3,9 @@
 body{
   margin: 0;
   background-color: #DA00DA;
+  font-family: 'montserratthin';
+  font-size: 14px;
+  font-weight: 900;
 }
 
 
@@ -22,6 +25,8 @@ body{
   h1, h2 {
     text-align: center;
     color: #DA00DA;
+    font-family: 'luckiest_guyregular';
+    font-size: 29px;
   }
   
   .form-group {
@@ -33,7 +38,7 @@ body{
     position: absolute;
     background-color: white;
     margin-left: 10px;
-    transform: translateY(-13px);
+    transform: translateY(-7px);
     color: #000000;
   }
   
@@ -55,6 +60,8 @@ body{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: 'luckiest_guyregular';
+    font-size: 29px;
   }
 
   .download-btn{

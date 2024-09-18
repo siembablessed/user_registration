@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
+
 const Home = () => {
   const [visitors, setVisitors] = useState(() => {
     const savedVisitors = localStorage.getItem('visitors');
