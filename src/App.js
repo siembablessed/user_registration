@@ -10,8 +10,8 @@ function App() {
     <Router>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Registration />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/" element={<Admin />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
