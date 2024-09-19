@@ -260,6 +260,11 @@ const Registration = () => {
       )}
     </div>
     <img src={FooterImage} alt=""  className='footerImage'/>
+
+      <div class="left-bottom-container">
+        <h1>Bioskop!</h1>
+        <p>Short Film Competition</p>
+      </div>
     </div>
   );
 };

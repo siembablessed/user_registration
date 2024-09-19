@@ -3,7 +3,8 @@ import axios from 'axios';
 import * as XLSX from 'xlsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
+import FooterImage from './Images/BottomFrame.png'
+import TopImage from './Images/TopFrame.png'
 
 
 const Admin = () => {
@@ -84,97 +85,101 @@ const Admin = () => {
   }, [isModalOpen]);
 
   return (
-    <div className="registration-form">
-      <h1>Database</h1>
-      {/* <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>ID Number</label>
-          <input
-            type="text"
-            name="idNumber"
-            value={formData.idNumber}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Address</label>
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Age</label>
-          <input
-            type="number"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Reason for Visit</label>
-          <input
-            type="text"
-            name="reason"
-            value={formData.reason}
-            disabled
-          />
-        </div>
-        <button type="submit" className="submit-btn">Submit</button>
-      </form> */}
-
-      {/* <h2>Visitor List</h2> */}
-      <ul>
-        {visitors.slice(0, 2).map((visitor, index) => (
-          <li key={index}>
-            {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
-          </li>
-        ))}
-      </ul>
-
-      {visitors.length > 2 && (
-        <button onClick={toggleModal} className="read-more-btn">
-          Read More
+    <div>
+      <img src={TopImage} alt="" className='topImage' />
+      <div className="registration-form">
+        <h1>Database</h1>
+        {/* <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>ID Number</label>
+            <input
+              type="text"
+              name="idNumber"
+              value={formData.idNumber}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Address</label>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Age</label>
+            <input
+              type="number"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Reason for Visit</label>
+            <input
+              type="text"
+              name="reason"
+              value={formData.reason}
+              disabled
+            />
+          </div>
+          <button type="submit" className="submit-btn">Submit</button>
+        </form> */}
+        {/* <h2>Visitor List</h2> */}
+        <ul>
+          {visitors.slice(0, 2).map((visitor, index) => (
+            <li key={index}>
+              {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
+            </li>
+          ))}
+        </ul>
+        {visitors.length > 2 && (
+          <button onClick={toggleModal} className="read-more-btn">
+            Read More
+          </button>
+        )}
+        <button onClick={downloadExcel} className="download-btn">
+          Download Excel
         </button>
-      )}
-
-      <button onClick={downloadExcel} className="download-btn">
-        Download Excel
-      </button>
-
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content" ref={modalRef}>
-            <FontAwesomeIcon icon={faTimes} onClick={toggleModal} className="close-modal-icon" />
-            <h2>All Visitors</h2>
-            <div className="modal-body">
-              <ul>
-                {visitors.map((visitor, index) => (
-                  <li key={index}>
-                    {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
-                  </li>
-                ))}
-              </ul>
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content" ref={modalRef}>
+              <FontAwesomeIcon icon={faTimes} onClick={toggleModal} className="close-modal-icon" />
+              <h2>All Visitors</h2>
+              <div className="modal-body">
+                <ul>
+                  {visitors.map((visitor, index) => (
+                    <li key={index}>
+                      {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+      <img src={FooterImage} alt=""  className='footerImage'/>
+      <div class="left-bottom-container">
+          <h1>Bioskop</h1>
+          <p>a short film</p>
+      </div>
     </div>
   );
 };

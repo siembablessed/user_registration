@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import FooterImage from './Images/BottomFrame.png'
+import TopImage from './Images/TopFrame.png'
 
 const FirebaseForm = () => {
   const [formData, setFormData] = useState({
@@ -32,50 +34,60 @@ const FirebaseForm = () => {
   };
 
   return (
-    <form className="registration-form" onSubmit={handleSubmit}>
-      <h1>Register</h1>
-      <div className="form-group">
-        <label htmlFor="fullName">Full Name</label>
-        <input
-          type="text"
-          id="fullName"
-          name="fullName"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="country">Country</label>
-        <input
-          type="text"
-          id="country"
-          name="country"
-          value={formData.country}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="idNumber">ID Number</label>
-        <input
-          type="text"
-          id="idNumber"
-          name="idNumber"
-          value={formData.idNumber}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="age">Age</label>
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit" className="submit-btn">Submit</button>
-    </form>
+    <div>
+      <img src={TopImage} alt="" className='topImage' />
+      <form className="registration-form" onSubmit={handleSubmit}>
+        <h1>Register</h1>
+        <div className="form-group">
+          <label htmlFor="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            value={formData.country}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="idNumber">ID Number</label>
+          <input
+            type="text"
+            id="idNumber"
+            name="idNumber"
+            value={formData.idNumber}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" className="submit-btn">Submit</button>
+      </form>
+
+      <img src={FooterImage} alt=""  className='footerImage'/>
+
+<div class="left-bottom-container">
+  <h1>Bioskop!</h1>
+  <p>Short Film Competition</p>
+</div>
+    </div>
   );
 };
 
