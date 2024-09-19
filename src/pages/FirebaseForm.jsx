@@ -25,7 +25,7 @@ const FirebaseForm = () => {
 
     try {
       await addDoc(collection(db, 'registrations'), formData);
-      alert('Registration saved to Firebase!');
+      alert('Entry Submitted Successfully');
     } catch (error) {
       console.error('Error saving registration:', error);
     }
