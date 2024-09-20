@@ -320,8 +320,21 @@ body{
   }
 }
 
-@media (min-width: 768px) and (max-width: 1098px) {
+@media (min-width:768px) and (max-width:886px ) {
 
+  .left-bottom-container h1 {
+    font-size: 3.5rem; /* Smaller size for mobile */
+    margin-bottom: 5px;
+  }
+
+  .left-bottom-container p {
+    font-size: 14px; /* Smaller description text for mobile */
+  }
+
+}
+
+
+@media (min-width: 886px) and (max-width: 1098px) {
 
   .left-bottom-container h1 {
     font-size: 5rem; /* Smaller size for mobile */
@@ -346,12 +359,10 @@ body{
 }
 
 .left-top-container h1 {
-  font-size: 2rem;
-  font-weight: 125rem; 
-  font-family: 'montserratthin';
+  font-size: 1.6rem;
+  font-family: 'Montserrat ExtraBold';
   margin: 0;
   color: #fff;
-  text-shadow: 2px 10px 5px #FF02FD;
   text-align: left;
   span{
     color: black;
@@ -362,5 +373,14 @@ body{
   .left-top-container {
     display: none;
   }
+}
+
+.Orb{
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  width: 50px;
+  height: 50px;
+  z-index: -1;
 }
 

@@ -5,8 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './registration.css';
 import './Fonts/font.css';
+import './Fonts/Montserrat/monts.css';
 import FooterImage from './Images/BottomFrame.png'
 import TopImage from './Images/TopFrame.png'
+import Orb from '../components/Images/orb.png'
 
 // My List of countries 
 const countries = [
@@ -159,6 +161,7 @@ const Registration = () => {
             Zimbabwe <br />
         </h1>
       </div>
+      <img src={Orb} alt="" className='Orb' />
     <div className="registration-form">
       <h1>Visitor Registration Form</h1>
       <form onSubmit={handleSubmit}>
