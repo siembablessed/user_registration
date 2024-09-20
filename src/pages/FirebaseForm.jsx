@@ -81,12 +81,11 @@ const FirebaseForm = () => {
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
+      <div class="left-bottom-container">
+        <h1>Bioskop!</h1>
+        <p>Short Film Competition</p>
+      </div>
       <img src={FooterImage} alt=""  className='footerImage'/>
-
-<div class="left-bottom-container">
-  <h1>Bioskop!</h1>
-  <p>Short Film Competition</p>
-</div>
     </div>
   );
 };

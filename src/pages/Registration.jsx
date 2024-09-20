@@ -152,6 +152,13 @@ const Registration = () => {
   return (
     <div>
       <img src={TopImage} alt="" className='topImage' />
+      <div class="left-top-container">
+        <h1>EUROPEAN <br />
+            FILM <span>2024</span> <br />
+            FESTIVAL <br />
+            Zimbabwe <br />
+        </h1>
+      </div>
     <div className="registration-form">
       <h1>Visitor Registration Form</h1>
       <form onSubmit={handleSubmit}>
@@ -259,12 +266,11 @@ const Registration = () => {
         </div>
       )}
     </div>
-    <img src={FooterImage} alt=""  className='footerImage'/>
-
       <div class="left-bottom-container">
         <h1>Bioskop!</h1>
         <p>Short Film Competition</p>
       </div>
+      <img src={FooterImage} alt=""  className='footerImage'/>
     </div>
   );
 };
