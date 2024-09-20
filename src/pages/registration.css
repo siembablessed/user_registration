@@ -294,9 +294,44 @@ body{
 }
 
 /* Media Query to hide text on mobile view */
+/* @media (max-width: 768px) {
+  .left-bottom-container {
+      display: none; 
+  }
+} */
+
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .left-bottom-container {
-      display: none; /* Hide the text on mobile screens */
+    position: static;
+    margin-top: -100px;
+    text-align: center;
+  }
+
+  .left-bottom-container h1 {
+    font-size: 4rem; /* Smaller size for mobile */
+    margin-bottom: 5px;
+  }
+
+  .left-bottom-container p {
+    font-size: 14px; /* Smaller description text for mobile */
   }
 }
 
+@media (max-width: 975px) {
+  .left-bottom-container {
+    /* position: static;
+    margin-top: -100px;
+    text-align: center; */
+  }
+
+  .left-bottom-container h1 {
+    font-size: 5rem; /* Smaller size for mobile */
+    margin-bottom: 5px;
+  }
+
+  .left-bottom-container p {
+    font-size: 14px; /* Smaller description text for mobile */
+  }
+}
