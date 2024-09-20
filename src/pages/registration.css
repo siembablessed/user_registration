@@ -382,5 +382,9 @@ body{
   width: 50px;
   height: 50px;
   z-index: -1;
+
+  @media (max-width: 768px) {
+    left: 5%;
 }
 
+}
