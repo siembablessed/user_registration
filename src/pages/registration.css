@@ -283,7 +283,7 @@ body{
 }
 
 .left-bottom-container h1 {
-  font-size: 8rem; /* Adjust the size of 'Bioskop' */
+  font-size: 6rem; /* Adjust the size of 'Bioskop' */
   margin: 0;
   color: #fff;
   text-shadow: 2px 10px 5px #FF02FD;
