@@ -3,6 +3,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import FooterImage from './Images/BottomFrame.png';
 import TopImage from './Images/TopFrame.png';
+import Orb from '../components/Images/orb.png'
 
 const FirebaseForm = () => {
   const [formData, setFormData] = useState({
@@ -43,9 +44,18 @@ const FirebaseForm = () => {
 
   return (
     <div>
-      <img src={TopImage} alt="" className="topImage" />
-      <form className="registration-form" onSubmit={handleSubmit}>
-        <h1>Register</h1>
+      <img src={TopImage} alt="" className='topImage' />
+      <a href="FirebaseForm">
+        <div class="left-top-container">
+          <h1>EUROPEAN <br />
+              FILM <span>2024</span> <br />
+              FESTIVAL <br />
+              Zimbabwe <br />
+          </h1>
+        </div>
+      </a>
+      <img src={Orb} alt="" className='Orb' />      <form className="registration-form" onSubmit={handleSubmit}>
+        <h1>EFF Online Registration</h1>
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
           <input
