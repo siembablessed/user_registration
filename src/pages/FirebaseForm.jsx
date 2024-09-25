@@ -1,9 +1,8 @@
-// FirebaseForm.js
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
-import FooterImage from './Images/BottomFrame.png'
-import TopImage from './Images/TopFrame.png'
+import FooterImage from './Images/BottomFrame.png';
+import TopImage from './Images/TopFrame.png';
 
 const FirebaseForm = () => {
   const [formData, setFormData] = useState({
@@ -28,6 +27,15 @@ const FirebaseForm = () => {
     try {
       await addDoc(collection(db, 'registrations'), formData);
       alert('Entry Submitted Successfully');
+
+      // Clear the form by resetting the formData state
+      setFormData({
+        fullName: '',
+        country: '',
+        idNumber: '',
+        age: '',
+        date: new Date().toLocaleString(),
+      });
     } catch (error) {
       console.error('Error saving registration:', error);
     }
@@ -35,7 +43,7 @@ const FirebaseForm = () => {
 
   return (
     <div>
-      <img src={TopImage} alt="" className='topImage' />
+      <img src={TopImage} alt="" className="topImage" />
       <form className="registration-form" onSubmit={handleSubmit}>
         <h1>Register</h1>
         <div className="form-group">
@@ -46,6 +54,7 @@ const FirebaseForm = () => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="form-group">
@@ -56,6 +65,7 @@ const FirebaseForm = () => {
             name="country"
             value={formData.country}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="form-group">
@@ -66,6 +76,7 @@ const FirebaseForm = () => {
             name="idNumber"
             value={formData.idNumber}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="form-group">
@@ -76,16 +87,17 @@ const FirebaseForm = () => {
             name="age"
             value={formData.age}
             onChange={handleChange}
+            required
           />
         </div>
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
-      <div class="left-bottom-container">
+      <div className="left-bottom-container">
         <h1>Bioskop!</h1>
         <p>Short Film Competition</p>
       </div>
-      <img src={FooterImage} alt=""  className='footerImage'/>
+      <img src={FooterImage} alt="" className="footerImage" />
     </div>
   );
 };

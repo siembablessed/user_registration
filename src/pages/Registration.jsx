@@ -154,13 +154,15 @@ const Registration = () => {
   return (
     <div>
       <img src={TopImage} alt="" className='topImage' />
-      <div class="left-top-container">
-        <h1>EUROPEAN <br />
-            FILM <span>2024</span> <br />
-            FESTIVAL <br />
-            Zimbabwe <br />
-        </h1>
-      </div>
+      <a href="FirebaseForm">
+        <div class="left-top-container">
+          <h1>EUROPEAN <br />
+              FILM <span>2024</span> <br />
+              FESTIVAL <br />
+              Zimbabwe <br />
+          </h1>
+        </div>
+      </a>
       <img src={Orb} alt="" className='Orb' />
     <div className="registration-form">
       <h1>Visitor Registration Form</h1>
@@ -176,7 +178,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>Your ID Number</label>
+          <label>Email | Phone Number</label>
           <input
             type="text"
             name="idNumber"
