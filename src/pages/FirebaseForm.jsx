@@ -4,6 +4,7 @@ import { db } from '../firebase';
 import FooterImage from './Images/BottomFrame.png';
 import TopImage from './Images/TopFrame.png';
 import Orb from '../components/Images/orb.png'
+import mbare from './Images/mbare.png'
 
 const FirebaseForm = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ const FirebaseForm = () => {
         </div>
       </a>
       <img src={Orb} alt="" className='Orb' />      <form className="registration-form" onSubmit={handleSubmit}>
-        <h1>EFF Online Registration</h1>
+        <h1>Online Registration</h1>
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -104,8 +105,9 @@ const FirebaseForm = () => {
       </form>
 
       <div className="left-bottom-container">
-        <h1>Bioskop!</h1>
-        <p>Short Film Competition</p>
+        {/* <h1>Bioskop!</h1>
+        <p>Short Film Competition</p> */}
+        <img src={mbare} alt="" className='mbareart' />
       </div>
       <img src={FooterImage} alt="" className="footerImage" />
     </div>

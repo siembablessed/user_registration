@@ -2,7 +2,7 @@
 
 body{
   margin: 0;
-  background-color: #DA00DA;
+  background-color: #281253;
   font-family: 'montserratthin';
   font-size: 14px;
   font-weight: 900;
@@ -24,8 +24,8 @@ body{
   
   h1, h2 {
     text-align: center;
-    color: #DA00DA;
-    font-family: 'luckiest_guyregular';
+    color: #281253;
+    font-family: 'Montserrat ExtraBold';
     font-size: 29px;
   }
   
@@ -61,7 +61,7 @@ body{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'luckiest_guyregular';
+    font-family: 'Montserrat ExtraBold';
     font-size: 29px;
   }
 
@@ -72,7 +72,7 @@ body{
 
   
   .submit-btn:hover, .download-btn:hover, .read-more-btn:hover {
-    background-color: #3b3b3b;
+    background-color: #da00da;
   }
 
   .download-btn:hover{
@@ -360,13 +360,13 @@ body{
 }
 
 .left-top-container h1 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-family: 'Montserrat ExtraBold';
   margin: 0;
   color: #fff;
   text-align: left;
   span{
-    color: black;
+    color: #da00da;
   }
 }
 
@@ -378,6 +378,7 @@ body{
 
 .Orb{
   position: absolute;
+  opacity: 40%;
   top: 20%;
   left: 55%;
   width: 50px;
@@ -388,4 +389,8 @@ body{
     left: 5%;
 }
 
+}
+
+.mbareart{
+  width: 100px;
 }

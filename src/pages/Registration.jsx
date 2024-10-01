@@ -9,6 +9,7 @@ import './Fonts/Montserrat/monts.css';
 import FooterImage from './Images/BottomFrame.png'
 import TopImage from './Images/TopFrame.png'
 import Orb from '../components/Images/orb.png'
+import mbare from './Images/mbare.png'
 
 // My List of countries 
 const countries = [
@@ -272,8 +273,9 @@ const Registration = () => {
       )}
     </div>
       <div class="left-bottom-container">
-        <h1>Bioskop!</h1>
-        <p>Short Film Competition</p>
+        {/* <h1>Bioskop!</h1>
+        <p>Short Film Competition</p> */}
+        <img src={mbare} alt="" className='mbareart' />
       </div>
       <img src={FooterImage} alt=""  className='footerImage'/>
     </div>
