@@ -372,11 +372,11 @@ body{
 
 @media (max-width: 768px) {
   .left-top-container {
-    /* display: none; */
-    position: absolute;
-    top: 495px;
-    left: 280px;
-
+    display: none;
+    /* top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: ; */
     h1{
       font-size: 1rem;
       line-height: 14px;
@@ -387,7 +387,7 @@ body{
   .mbareart{
     position: fixed;
     bottom: 0;
-    left: 120px;
+    left: 150px;
   }
 }
 
