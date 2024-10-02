@@ -2,7 +2,7 @@
 
 body{
   margin: 0;
-  background-color: #281253;
+  background-color: #003399;
   font-family: 'montserratthin';
   font-size: 14px;
   font-weight: 900;
@@ -24,7 +24,7 @@ body{
   
   h1, h2 {
     text-align: center;
-    color: #281253;
+    color: #003399;
     font-family: 'Montserrat ExtraBold';
     font-size: 29px;
   }
@@ -57,7 +57,7 @@ body{
     margin-top: 5px;
     font-size: 1rem;
     color: white;
-    background-color: #1e1e1f;
+    background-color: #003399;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -72,7 +72,7 @@ body{
 
   
   .submit-btn:hover, .download-btn:hover, .read-more-btn:hover {
-    background-color: #da00da;
+    background-color: #2654ae;
   }
 
   .download-btn:hover{
@@ -366,7 +366,7 @@ body{
   color: #fff;
   text-align: left;
   span{
-    color: #da00da;
+    color: #FFCC00;
   }
 }
 
@@ -393,7 +393,7 @@ body{
 
 .Orb{
   position: absolute;
-  opacity: 40%;
+  opacity: 80%;
   top: 20%;
   left: 55%;
   width: 50px;
