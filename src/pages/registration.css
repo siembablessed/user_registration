@@ -25,7 +25,9 @@ body{
   h1, h2 {
     text-align: center;
     color: #003399;
-    font-family: 'Montserrat ExtraBold';
+    /* font-family: 'Montserrat ExtraBold'; */
+    font-family: 'luckiest_guyregular', sans-serif;
+    letter-spacing: 0.6px;
     font-size: 29px;
   }
   

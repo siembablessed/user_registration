@@ -179,7 +179,7 @@ const Registration = () => {
           />
         </div>
         <div className="form-group">
-          <label>Email | Phone Number</label>
+          <label>Your Phone Number</label>
           <input
             type="text"
             name="idNumber"
