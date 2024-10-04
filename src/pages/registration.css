@@ -267,6 +267,7 @@ body{
 
   @media (max-width: 768px) {
     width: 300%;
+    height: 60px;
     }
 }
 
