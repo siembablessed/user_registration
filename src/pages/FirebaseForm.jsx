@@ -10,7 +10,7 @@ const FirebaseForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     country: '',
-    idNumber: '',
+    organization: '',
     age: '',
     date: new Date().toLocaleString(),
   });
@@ -34,7 +34,7 @@ const FirebaseForm = () => {
       setFormData({
         fullName: '',
         country: '',
-        idNumber: '',
+        organization: '',
         age: '',
         date: new Date().toLocaleString(),
       });
@@ -91,12 +91,12 @@ const FirebaseForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="idNumber">Your Organization</label>
+          <label htmlFor="organization">Your Organization</label>
           <input
             type="text"
-            id="idNumber"
-            name="idNumber"
-            value={formData.idNumber}
+            id="organization"
+            name="organization"
+            value={formData.organization}
             onChange={handleChange}
             required
           />
