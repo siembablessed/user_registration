@@ -386,11 +386,16 @@ body{
 
 @media (max-width: 768px) {
   .left-top-container {
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
     top: 30px;
     h1{
       font-size: 1rem;
       line-height: 17px;
+
+      
     }
     
   }
