@@ -373,6 +373,12 @@ body{
   }
 }
 
+.mbareart{
+  width: 100px;
+  position: fixed;
+  left: 40px;
+}
+
 @media (max-width: 768px) {
   .left-top-container {
     display: none;
@@ -388,6 +394,9 @@ body{
   }
 
   .mbareart{
+    position: fixed;
+    left: 37%;
+    bottom: 0;
   }
 }
 
@@ -406,8 +415,3 @@ body{
 
 }
 
-.mbareart{
-  width: 100px;
-  position: fixed;
-  left: 40px;
-}
