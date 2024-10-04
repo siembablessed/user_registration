@@ -11,7 +11,7 @@ const FirebaseForm = () => {
     fullName: '',
     country: '',
     organization: '',
-    age: '',
+    contactNumber: '',
     date: new Date().toLocaleString(),
   });
 
@@ -35,7 +35,7 @@ const FirebaseForm = () => {
         fullName: '',
         country: '',
         organization: '',
-        age: '',
+        contactNumber: '',
         date: new Date().toLocaleString(),
       });
     } catch (error) {
@@ -69,12 +69,12 @@ const FirebaseForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="age">Your Phone Number</label>
+          <label htmlFor="contactNumber">Your Phone Number</label>
           <input
             type="number"
-            id="age"
-            name="age"
-            value={formData.age}
+            id="contactNumber"
+            name="contactNumber"
+            value={formData.contactNumber}
             onChange={handleChange}
             required
           />
