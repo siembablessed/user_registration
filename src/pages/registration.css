@@ -386,10 +386,8 @@ body{
 
 @media (max-width: 768px) {
   .left-top-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
+    position: fixed;
+    left: 37%;
     top: 30px;
     h1{
       font-size: 1rem;
