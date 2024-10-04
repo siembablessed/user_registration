@@ -58,7 +58,7 @@ const FirebaseForm = () => {
       <img src={Orb} alt="" className='Orb' />      <form className="registration-form" onSubmit={handleSubmit}>
         <h1>Online Registration</h1>
         <div className="form-group">
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">Your Full Name</label>
           <input
             type="text"
             id="fullName"
@@ -69,29 +69,7 @@ const FirebaseForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="country">Country</label>
-          <input
-            type="text"
-            id="country"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="idNumber">ID Number</label>
-          <input
-            type="text"
-            id="idNumber"
-            name="idNumber"
-            value={formData.idNumber}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age</label>
+          <label htmlFor="age">Your Phone Number</label>
           <input
             type="number"
             id="age"
@@ -101,14 +79,38 @@ const FirebaseForm = () => {
             required
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="country">Your Email Address</label>
+          <input
+            type="email"
+            id="country"
+            name="country"
+            value={formData.country}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="idNumber">Your Organization</label>
+          <input
+            type="text"
+            id="idNumber"
+            name="idNumber"
+            value={formData.idNumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
       <div className="left-bottom-container">
         {/* <h1>Bioskop!</h1>
         <p>Short Film Competition</p> */}
-        <img src={mbare} alt="" className='mbareart' />
+        
       </div>
+      <img src={mbare} alt="" className='mbareart' />
       <img src={FooterImage} alt="" className="footerImage" />
     </div>
   );

@@ -27,7 +27,7 @@ body{
     color: #003399;
     /* font-family: 'Montserrat ExtraBold'; */
     font-family: 'luckiest_guyregular', sans-serif;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     font-size: 29px;
   }
   
@@ -63,7 +63,8 @@ body{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Montserrat ExtraBold';
+    font-family: 'luckiest_guyregular', sans-serif;
+    letter-spacing: 0.3px;
     font-size: 29px;
   }
 
@@ -267,10 +268,10 @@ body{
 
 .topImage{
   margin: 0; padding: 0;
-  width: 100%; ;
+  width: 100%; height: 12px;
 
   @media (max-width: 768px) {
-    height: 20px;
+    height: 10px; width: 100%;
   }
 }
 
@@ -387,9 +388,6 @@ body{
   }
 
   .mbareart{
-    position: fixed;
-    bottom: 0;
-    left: 130px;
   }
 }
 
@@ -410,4 +408,6 @@ body{
 
 .mbareart{
   width: 100px;
+  position: fixed;
+  left: 40px;
 }

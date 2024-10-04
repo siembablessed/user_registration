@@ -6,35 +6,15 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './registration.css';
 import './Fonts/font.css';
 import './Fonts/Montserrat/monts.css';
-import FooterImage from './Images/BottomFrame.png'
-import TopImage from './Images/TopFrame.png'
-import Orb from '../components/Images/orb.png'
-import mbare from './Images/mbare.png'
+import FooterImage from './Images/BottomFrame.png';
+import TopImage from './Images/TopFrame.png';
+import Orb from '../components/Images/orb.png';
+import mbare from './Images/mbare.png';
 
 // My List of countries 
 const countries = [
-  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
-  "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
-  "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
-  "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Congo (Democratic Republic)",
-  "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor",
-  "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland",
-  "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea",
-  "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
-  "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (North)",
-  "Korea (South)", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
-  "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
-  "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique",
-  "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia",
-  "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland",
-  "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
-  "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
-  "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
-  "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan",
-  "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
-  "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+  //... (your list of countries)
 ];
-
 
 const Registration = () => {
   const [visitors, setVisitors] = useState(() => {
@@ -45,11 +25,11 @@ const Registration = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     idNumber: '',
-    address: '',
-    age: '',
+    email: '', // New email field
+    organization: '', // Changed from age to organization
     reason: 'Film Festival',
     date: new Date().toISOString(),
-    country: 'Zimbabwe', // Default country set to Zimbabwe
+    country: 'Zimbabwe', // Default country still stored
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -108,11 +88,11 @@ const Registration = () => {
     setFormData({
       fullName: '',
       idNumber: '',
-      address: '',
-      age: '',
+      email: '', // Reset email field
+      organization: '', // Reset organization field
       reason: 'Film Festival',
       date: new Date().toISOString(),
-      country: 'Zimbabwe', // Reset to default country
+      country: 'Zimbabwe', // Keep country for internal data
     });
     setFilteredCountries(countries);
     setIsDropdownOpen(false);
@@ -121,13 +101,6 @@ const Registration = () => {
   const handleCountrySelect = (country) => {
     setFormData((prevData) => ({ ...prevData, country }));
     setIsDropdownOpen(false);
-  };
-
-  const downloadExcel = () => {
-    const worksheet = XLSX.utils.json_to_sheet(visitors);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Visitors');
-    XLSX.writeFile(workbook, 'visitors.xlsx');
   };
 
   const toggleModal = () => {
@@ -156,7 +129,7 @@ const Registration = () => {
     <div>
       <img src={TopImage} alt="" className='topImage' />
       <a href="FirebaseForm">
-        <div class="left-top-container">
+        <div className="left-top-container">
           <h1>EUROPEAN <br />
               FILM <span>2024</span> <br />
               FESTIVAL <br />
@@ -165,119 +138,100 @@ const Registration = () => {
         </div>
       </a>
       <img src={Orb} alt="" className='Orb' />
-    <div className="registration-form">
-      <h1>Visitor Registration Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Your Full Name</label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Your Phone Number</label>
-          <input
-            type="text"
-            name="idNumber"
-            value={formData.idNumber}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Your Home Country</label>
-          <div className="country-input-container" ref={countryInputRef}>
+      <div className="registration-form">
+        <h1>Visitor Registration Form</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Your Full Name</label>
             <input
               type="text"
-              name="country"
-              value={formData.country}
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
-              placeholder="Select your country"
-              className="country-input"
+              required
             />
-            {isDropdownOpen && (
-              <div className="country-dropdown">
-                {filteredCountries.map((country, index) => (
-                  <div
-                    key={index}
-                    className="country-option"
-                    onClick={() => handleCountrySelect(country)}
-                  >
-                    {country}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
-        </div>
-        <div className="form-group">
-          <label>Your Age</label>
+          <div className="form-group">
+            <label>Your Phone Number</label>
+            <input
+              type="text"
+              name="idNumber"
+              value={formData.idNumber}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          {/* Hidden Country Input */}
+          <input type="hidden" name="country" value={formData.country} />
+
+          <div className="form-group">
+            <label>Your Email Address</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Your Organization</label>
+            <input
+              type="text"
+              name="organization"
+              value={formData.organization}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Hidden Event Field */}
           <input
-            type="number"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            required
+            type="hidden"
+            name="reason"
+            value={formData.reason}
           />
-        </div>
 
-        {/* Hidden Event Field */}
-        <input
-          type="hidden"
-          name="reason"
-          value={formData.reason}
-        />
+          {/* Hidden Date Field */}
+          <input
+            type="hidden"
+            name="date"
+            value={formData.date}
+          />
 
-        {/* Hidden Date Field */}
-        <input
-          type="hidden"
-          name="date"
-          value={formData.date}
-        />
+          <button type="submit" className="submit-btn">Submit</button>
+        </form>
 
-        <button type="submit" className="submit-btn">Submit</button>
-      </form>
+        {/* Success Popup */}
+        {showSuccessPopup && (
+          <div className="success-popup">
+            <p>Data saved successfully!</p>
+          </div>
+        )}
 
-      {/* Success Popup */}
-      {showSuccessPopup && (
-        <div className="success-popup">
-          <p>Data saved successfully!</p>
-        </div>
-      )}
-
-      {/* <button onClick={downloadExcel} className="download-btn">
-        Download Excel
-      </button> */}
-
-      {/* Modal for displaying all visitors */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content" ref={modalRef}>
-            <FontAwesomeIcon icon={faTimes} onClick={toggleModal} className="close-modal-icon" />
-            <h2>All Visitors</h2>
-            <div className="modal-body">
-              <ul>
-                {visitors.map((visitor, index) => (
-                  <li key={index}>
-                    {visitor.fullName} - {visitor.idNumber} - {visitor.address} - {visitor.age} - {visitor.reason} - {visitor.date} - {visitor.country}
-                  </li>
-                ))}
-              </ul>
+        {/* Modal for displaying all visitors */}
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content" ref={modalRef}>
+              <FontAwesomeIcon icon={faTimes} onClick={toggleModal} className="close-modal-icon" />
+              <h2>All Visitors</h2>
+              <div className="modal-body">
+                <ul>
+                  {visitors.map((visitor, index) => (
+                    <li key={index}>
+                      {visitor.fullName} - {visitor.idNumber} - {visitor.email} - {visitor.organization} - {visitor.reason} - {visitor.date} - {visitor.country}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
-      <div class="left-bottom-container">
-        {/* <h1>Bioskop!</h1>
-        <p>Short Film Competition</p> */}
+        )}
+      </div>
+      <div className="left-bottom-container">
         <img src={mbare} alt="" className='mbareart' />
       </div>
-      <img src={FooterImage} alt=""  className='footerImage'/>
+      <img src={FooterImage} alt="" className='footerImage' />
     </div>
   );
 };
