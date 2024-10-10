@@ -389,7 +389,7 @@ body{
     position: fixed;
     left: 37%;
     top: 30px;
-    opacity: 40%;
+    opacity: 100%;
 
     h1{
       font-size: 1rem;
