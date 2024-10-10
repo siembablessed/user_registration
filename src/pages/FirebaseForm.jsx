@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import FooterImage from './Images/BottomFrame.png';
 import TopImage from './Images/TopFrame.png';
-import Orb from '../components/Images/orb.png'
-import mbare from './Images/mbare.png'
+import Orb from '../components/Images/orb.png';
+import mbare from './Images/mbare.png';
 
 const FirebaseForm = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +27,16 @@ const FirebaseForm = () => {
     e.preventDefault();
 
     try {
+      // Check if the email already exists
+      const q = query(collection(db, 'registrations'), where('country', '==', formData.country));
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        alert('User already registered with this email address.');
+        return;
+      }
+
+      // Add the new registration
       await addDoc(collection(db, 'registrations'), formData);
       alert('Entry Submitted Successfully');
 
@@ -47,15 +57,16 @@ const FirebaseForm = () => {
     <div>
       <img src={TopImage} alt="" className='topImage' />
       <a href="FirebaseForm">
-        <div class="left-top-container">
+        <div className="left-top-container">
           <h1>EUROPEAN <br />
-              FILM <span>2024</span> <br />
-              FESTIVAL <br />
-              Zimbabwe <br />
+            FILM <span>2024</span> <br />
+            FESTIVAL <br />
+            Zimbabwe <br />
           </h1>
         </div>
       </a>
-      <img src={Orb} alt="" className='Orb' />      <form className="registration-form" onSubmit={handleSubmit}>
+      <img src={Orb} alt="" className='Orb' />
+      <form className="registration-form" onSubmit={handleSubmit}>
         <h1>Online Registration</h1>
         <div className="form-group">
           <label htmlFor="fullName">Your Full Name</label>
@@ -108,7 +119,6 @@ const FirebaseForm = () => {
       <div className="left-bottom-container">
         {/* <h1>Bioskop!</h1>
         <p>Short Film Competition</p> */}
-        
       </div>
       <img src={mbare} alt="" className='mbareart' />
       <img src={FooterImage} alt="" className="footerImage" />
